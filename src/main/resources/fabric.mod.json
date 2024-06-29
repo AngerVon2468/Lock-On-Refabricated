@@ -1,0 +1,32 @@
+{
+	"schemaVersion": 1,
+	"id": "lock_on",
+	"version": "${version}",
+	"name": "Lock On Refabricated",
+	"description": "Unofficial port of Lock On to fabric",
+	"authors": [
+		"Mavity The Madity"
+	],
+	"contact": {
+		"homepage": "https://github.com/AngerVon2468/Lock-On-Refabricated",
+		"issues": "https://github.com/AngerVon2468/Lock-On-Refabricated/issues",
+		"sources": "https://github.com/AngerVon2468/Lock-On-Refabricated"
+	},
+	"license": "Unlicense",
+	"icon": "assets/lock_on/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"wiiu.mavity.lock_on.LockOnRefabricated"
+		]
+	},
+	"mixins": [
+		"lock_on.mixins.json"
+	],
+	"depends": {
+		"fabricloader": "*",
+		"minecraft": "~1.20.1",
+		"java": ">=17",
+		"fabric-api": "*"
+	}
+}
