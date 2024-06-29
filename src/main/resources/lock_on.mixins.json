@@ -2,8 +2,9 @@
 	"required": true,
 	"package": "wiiu.mavity.lock_on.mixin",
 	"compatibilityLevel": "JAVA_17",
-	"mixins": [
-		"ExampleMixin"
+	"client": [
+		"EntityRenderDispatcherMixin",
+		"MouseMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1

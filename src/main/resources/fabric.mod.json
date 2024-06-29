@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "lock_on",
-	"version": "${version}",
+	"version": "v1.0.0",
 	"name": "Lock On Refabricated",
 	"description": "Unofficial port of Lock On to fabric",
 	"authors": [
@@ -14,15 +14,16 @@
 	},
 	"license": "Unlicense",
 	"icon": "assets/lock_on/icon.png",
-	"environment": "*",
+	"environment": "client",
 	"entrypoints": {
-		"main": [
+		"client": [
 			"wiiu.mavity.lock_on.LockOnRefabricated"
 		]
 	},
 	"mixins": [
 		"lock_on.mixins.json"
 	],
+	"accessWidener": "lock_on.accesswidener",
 	"depends": {
 		"fabricloader": "*",
 		"minecraft": "~1.20.1",
