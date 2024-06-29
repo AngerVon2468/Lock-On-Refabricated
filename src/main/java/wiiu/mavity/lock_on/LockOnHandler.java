@@ -26,7 +26,9 @@ import org.lwjgl.glfw.GLFW;
 
 import wiiu.mavity.lock_on.config.LockOnConfig;
 
+import java.awt.*;
 import java.util.*;
+import java.util.List;
 import java.util.function.Predicate;
 
 public class LockOnHandler {
@@ -213,7 +215,7 @@ public class LockOnHandler {
         fillTriangle(builder, matrix4f, x, 0, width, height, bbHeight, z, r, g, b, a, Dir.right);
     }
 
-    public static void fillTriangle(VertexConsumer builder, Matrix4f matrix4f, float x, float y, float width, float height,float bbHeight, float z, float r, float g, float b, float a, Dir dir) {
+    public static void fillTriangle(VertexConsumer builder, Matrix4f matrix4f, float x, float y, float width, float height, float bbHeight, float z, float r, float g, float b, float a, Dir dir) {
 
         switch (dir) {
             case up -> {
