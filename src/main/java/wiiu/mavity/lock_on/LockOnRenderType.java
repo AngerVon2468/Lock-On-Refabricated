@@ -15,6 +15,6 @@ public class LockOnRenderType extends RenderPhase {
                 .program(COLOR_PROGRAM)
                 .transparency(TRANSLUCENT_TRANSPARENCY)
                 .build(false);
-        return RenderLayer.of(LockOnRefabricated.MOD_ID, VertexFormats.POSITION_COLOR, VertexFormat.DrawMode.TRIANGLES, 256, true, true, renderTypeState);
+        return RenderLayer.of(LockOnRefabricatedClient.MOD_ID, VertexFormats.POSITION_COLOR, VertexFormat.DrawMode.TRIANGLES, 256, true, true, renderTypeState);
     }
 }

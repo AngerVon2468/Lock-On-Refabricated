@@ -1,19 +1,15 @@
 package wiiu.mavity.lock_on;
 
-import net.fabricmc.api.ClientModInitializer;
+import eu.midnightdust.lib.config.MidnightConfig;
 
-import org.slf4j.*;
+import net.fabricmc.api.ModInitializer;
 
-public class LockOnRefabricated implements ClientModInitializer {
+import wiiu.mavity.lock_on.config.LockOnConfig;
 
-	public static final String MOD_ID = "lock_on";
+public class LockOnRefabricated implements ModInitializer {
 
-	public static final String NAME = "Lock On Refabricated";
-
-    public static final Logger LOGGER = LoggerFactory.getLogger("lock_on");
-
-	@Override
-	public void onInitializeClient() {
-		LockOnHandler.registerLockOnKeybinds();
-	}
+    @Override
+    public void onInitialize() {
+        MidnightConfig.init(LockOnRefabricatedClient.MOD_ID, LockOnConfig.class);
+    }
 }

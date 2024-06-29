@@ -24,6 +24,8 @@ import org.joml.Quaternionf;
 
 import org.lwjgl.glfw.GLFW;
 
+import wiiu.mavity.lock_on.config.LockOnConfig;
+
 import java.util.*;
 import java.util.function.Predicate;
 
@@ -58,7 +60,7 @@ public class LockOnHandler {
 
     public static void registerLockOnKeybinds() {
         registerKeyInputs();
-        LockOnRefabricated.LOGGER.info(LockOnRefabricated.NAME + " has registered its keybinds.");
+        LockOnRefabricatedClient.LOGGER.info(LockOnRefabricatedClient.NAME + " has registered its keybinds.");
     }
 
     public static void registerKeyInputs() {
@@ -179,8 +181,8 @@ public class LockOnHandler {
             poseStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rotate));
 
 
-            float w = (float) 0.9;
-            float h = (float) 0.7;
+            float width = (float) LockOnConfig.triangleWidth;
+            float height = (float) LockOnConfig.triangleHeight;
 
             int color = 0xffffff00;
 
@@ -190,13 +192,13 @@ public class LockOnHandler {
                 // Oof
             }
             RenderSystem.disableCull();
-            fillTriangles(builder, poseStack.peek().getPositionMatrix(), 0, entity.getHeight() / 2f, -w / 2f, h,entity.getHeight() / 2f, 0, color);
+            fillTriangles(builder, poseStack.peek().getPositionMatrix(), 0, entity.getHeight() / 2f, -width / 2f, height,entity.getHeight() / 2f, 0, color);
             poseStack.pop();
         }
     }
 
     public enum Dir {
-        up, down, left, right;
+        up, down, left, right
     }
 
     public static void fillTriangles(VertexConsumer builder, Matrix4f matrix4f, float x, float y, float width, float height, float bbHeight, float z, int aarrggbb) {

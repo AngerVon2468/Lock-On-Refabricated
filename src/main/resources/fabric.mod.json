@@ -14,10 +14,13 @@
 	},
 	"license": "Unlicense",
 	"icon": "assets/lock_on/icon.png",
-	"environment": "client",
+	"environment": "*",
 	"entrypoints": {
-		"client": [
+		"main": [
 			"wiiu.mavity.lock_on.LockOnRefabricated"
+		],
+		"client": [
+			"wiiu.mavity.lock_on.LockOnRefabricatedClient"
 		]
 	},
 	"mixins": [
@@ -29,5 +32,9 @@
 		"minecraft": "~1.20.1",
 		"java": ">=17",
 		"fabric-api": "*"
+	},
+	"recommends": {
+		"modmenu": "*",
+		"midnightlib": "*"
 	}
 }
