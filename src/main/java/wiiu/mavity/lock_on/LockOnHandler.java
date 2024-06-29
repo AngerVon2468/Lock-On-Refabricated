@@ -26,7 +26,6 @@ import org.lwjgl.glfw.GLFW;
 
 import wiiu.mavity.lock_on.config.LockOnConfig;
 
-import java.awt.*;
 import java.util.*;
 import java.util.List;
 import java.util.function.Predicate;
@@ -223,6 +222,7 @@ public class LockOnHandler {
                 builder.vertex(matrix4f, x + width / 2, y + height, z).color(r, g, b, a).next();
                 builder.vertex(matrix4f, x - width / 2, y + height, z).color(r, g, b, a).next();
             }
+
             case down -> {
                 builder.vertex(matrix4f, x, y, z).color(r, g, b, a).next();
                 builder.vertex(matrix4f, x + width / 2, y - height, z).color(r, g, b, a).next();
