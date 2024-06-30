@@ -12,7 +12,7 @@ public class LockOnRenderType extends RenderPhase {
 
     private static RenderLayer getRenderType() {
         RenderLayer.MultiPhaseParameters renderTypeState = RenderLayer.MultiPhaseParameters.builder()
-                .program(COLOR_PROGRAM)
+                .shader(RenderPhase.COLOR_SHADER)
                 .transparency(TRANSLUCENT_TRANSPARENCY)
                 .build(false);
         return RenderLayer.of(LockOnRefabricatedClient.MOD_ID, VertexFormats.POSITION_COLOR, VertexFormat.DrawMode.TRIANGLES, 256, true, true, renderTypeState);

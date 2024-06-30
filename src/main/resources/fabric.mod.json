@@ -1,7 +1,7 @@
 {
 	"schemaVersion": 1,
 	"id": "lock_on",
-	"version": "v1.0.1",
+	"version": "v1.0.0+1.19",
 	"name": "Lock On Refabricated",
 	"description": "Unofficial port of Lock On to fabric",
 	"authors": [
@@ -29,9 +29,9 @@
 	"accessWidener": "lock_on.accesswidener",
 	"depends": {
 		"fabricloader": "*",
-		"minecraft": "~1.20.1",
+		"minecraft": "~1.19",
 		"java": ">=17",
-		"fabric-api": "*"
+		"fabric": "*"
 	},
 	"recommends": {
 		"modmenu": "*",

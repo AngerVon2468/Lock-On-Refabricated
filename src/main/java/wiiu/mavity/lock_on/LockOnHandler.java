@@ -19,9 +19,6 @@ import net.minecraft.util.math.*;
 
 import org.jetbrains.annotations.*;
 
-import org.joml.Matrix4f;
-import org.joml.Quaternionf;
-
 import org.lwjgl.glfw.GLFW;
 
 import wiiu.mavity.lock_on.config.LockOnConfig;
@@ -167,7 +164,7 @@ public class LockOnHandler {
         targeted = findNearby(player);
     }
 
-    public static void renderWorldLast(Entity entity, MatrixStack poseStack, VertexConsumerProvider buffers, Quaternionf quaternion) {
+    public static void renderWorldLast(Entity entity, MatrixStack poseStack, VertexConsumerProvider buffers, Quaternion quaternion) {
         if (targeted == entity) {
             VertexConsumer builder = buffers.getBuffer(LockOnRenderType.RENDER_TYPE);
             poseStack.push();
@@ -179,7 +176,7 @@ public class LockOnHandler {
 
             float rotate = (Util.getMeasuringTimeNano() / -8_000_000f);
 
-            poseStack.multiply(RotationAxis.POSITIVE_Z.rotationDegrees(rotate));
+            poseStack.multiply(Vec3f.POSITIVE_Z.getDegreesQuaternion(rotate));
 
 
             float width = (float) LockOnConfig.triangleWidth;
